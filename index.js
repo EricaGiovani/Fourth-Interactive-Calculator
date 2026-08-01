@@ -8,8 +8,8 @@ console.log(`Welcome to Interactive Calculator, ${name}!`)
 
 function getNumber(){
   while(true){
-    const input = prompt('Enter the Number: ');
-    const number = Number(input);
+    const inputNumber = prompt('Enter the Number: ');
+    const number = Number(inputNumber);
   
   if (isNaN(number)){
     console.log('Must be a Number!');
@@ -19,3 +19,17 @@ function getNumber(){
 }
 }
 getNumber();
+
+function getOperator(){
+  while(true){
+    const inputOperator = prompt('Enter the Operator: ');
+    const operator = ['+', '-', '*', '/', '%', '**'];
+
+  if (!operator.includes(inputOperator)){
+    console.log('Must be a Operator!');
+  } else{
+    return operator;
+  }
+}
+}
+getOperator();
