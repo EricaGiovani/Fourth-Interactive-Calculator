@@ -6,10 +6,10 @@ console.log("===Interactive Calculator===");
 const name = prompt('Masukkan Nama: ');
 console.log(`Welcome to Interactive Calculator, ${name}!`)
 
-function getNumber(){
+function firstNumber(){
   while(true){
-    const inputNumber = prompt('Enter the Number: ');
-    const number = Number(inputNumber);
+    const firstNumber = prompt('Enter the Number: ');
+    const number = Number(firstNumber);
   
   if (isNaN(number)){
     console.log('Must be a Number!');
@@ -18,7 +18,7 @@ function getNumber(){
   }
 }
 }
-getNumber();
+firstNumber();
 
 function getOperator(){
   while(true){
@@ -33,3 +33,32 @@ function getOperator(){
 }
 }
 getOperator();
+
+function plus(a,b){
+  return a + b;
+}
+
+function minus(a,b){
+  return a - b;
+}
+
+function multiply(a,b){
+  return a * b;
+}
+
+function modulus(a,b){
+  return a % b;
+}
+
+function power(a,b){
+  return a ** b;
+}
+
+function divide(a,b){
+  if (b === 0){
+    return "You Can't Divide By Zero/0";
+  } else {
+    return a / b;
+  }
+}
+
