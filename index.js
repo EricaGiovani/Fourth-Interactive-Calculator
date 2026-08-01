@@ -8,17 +8,17 @@ console.log(`Welcome to Interactive Calculator, ${name}!`)
 
 function firstNumber(){
   while(true){
-    const firstNumber = prompt('Enter the Number: ');
-    const number = Number(firstNumber);
+    const enterFirstNumber = prompt('Enter the Number: ');
+    const number1 = Number(enterFirstNumber);
   
-  if (isNaN(number)){
+  if (isNaN(number1)){
     console.log('Must be a Number!');
   } else{
-    return number;
+    return number1;
   }
 }
 }
-firstNumber();
+const allFirstNumber = firstNumber();
 
 function getOperator(){
   while(true){
@@ -28,11 +28,11 @@ function getOperator(){
   if (!operator.includes(inputOperator)){
     console.log('Must be a Operator!');
   } else{
-    return operator;
+    return inputOperator;
   }
 }
 }
-getOperator();
+const allOperator = getOperator();
 
 function plus(a,b){
   return a + b;
@@ -62,3 +62,40 @@ function divide(a,b){
   }
 }
 
+function secondNumber(){
+  while(true){
+    const enterSecondNumber = prompt('Enter the Number: ');
+    const number2 = Number(enterSecondNumber);
+  
+  if (isNaN(number2)){
+    console.log('Must be a Number!');
+  } else{
+    return number2;
+  }
+}
+}
+const allSecondNumber = secondNumber();
+
+let result;
+  switch (allOperator){
+    case '+':
+      result = plus(allFirstNumber, allSecondNumber);
+      break;
+    case '-':
+      result = minus(allFirstNumber, allSecondNumber);
+      break;
+    case '*':
+      result = multiply(allFirstNumber, allSecondNumber);
+      break;
+    case '/':
+      result = divide(allFirstNumber, allSecondNumber);
+      break;
+    case '%':
+      result = modulus(allFirstNumber, allSecondNumber);
+      break;
+    case '**':
+      result = power(allFirstNumber, allSecondNumber);
+      break;
+    default:
+      result = 'This Is Not An Operator';
+  }
