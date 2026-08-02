@@ -101,18 +101,33 @@ while (true){
       default:
         result = 'This Is Not An Operator';
   }
+
+
   console.log(`The Result is ${result}`);
+
+  if (typeof result === 'number'){
+  const sign = (result > 0) ? 'Positive' : (result < 0) ? 'Negative' : 'Zero';
+  const type = Number.isInteger(result) ? 'Integer' : 'Desimal';
+  const parity = (type === 'Integer' && result % 2 === 0) ? 'Even' : (type === 'Integer' ? 'Odd' : '');
+
+  console.log("===The Results of The Analysis===");
+  console.log(`Positive or Negative or Zero : ${sign}`);
+  console.log(`Integer or Desimal : ${type}`);
+  console.log(`Even or Odd : ${parity}`);
+
+  } else {
+  console.log(result);
+  };
+
   const ask = prompt('Do You Want To Continue? (yes/no)');
   if (ask === 'no'){
     break;
   }
 }
 
-if (typeof result === 'number'){
-  const sign = (result > 0) ? 'positive' : (result < 0) ? 'negative' : 'nol'
-} else {
-  console.log(result);
-}
+
+
+
 
 
 
