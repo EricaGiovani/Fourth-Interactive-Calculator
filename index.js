@@ -18,7 +18,6 @@ function firstNumber(){
   }
 }
 }
-const allFirstNumber = firstNumber();
 
 function getOperator(){
   while(true){
@@ -32,7 +31,6 @@ function getOperator(){
   }
 }
 }
-const allOperator = getOperator();
 
 function plus(a,b){
   return a + b;
@@ -74,28 +72,47 @@ function secondNumber(){
   }
 }
 }
-const allSecondNumber = secondNumber();
 
-let result;
-  switch (allOperator){
-    case '+':
-      result = plus(allFirstNumber, allSecondNumber);
-      break;
-    case '-':
-      result = minus(allFirstNumber, allSecondNumber);
-      break;
-    case '*':
-      result = multiply(allFirstNumber, allSecondNumber);
-      break;
-    case '/':
-      result = divide(allFirstNumber, allSecondNumber);
-      break;
-    case '%':
-      result = modulus(allFirstNumber, allSecondNumber);
-      break;
-    case '**':
-      result = power(allFirstNumber, allSecondNumber);
-      break;
-    default:
-      result = 'This Is Not An Operator';
+while (true){
+  const allFirstNumber = firstNumber();
+  const allOperator = getOperator();
+  const allSecondNumber = secondNumber();
+
+  let result;
+    switch (allOperator){
+      case '+':
+        result = plus(allFirstNumber, allSecondNumber);
+        break;
+      case '-':
+        result = minus(allFirstNumber, allSecondNumber);
+        break;
+      case '*':
+        result = multiply(allFirstNumber, allSecondNumber);
+        break;
+      case '/':
+        result = divide(allFirstNumber, allSecondNumber);
+        break;
+      case '%':
+        result = modulus(allFirstNumber, allSecondNumber);
+        break;
+      case '**':
+        result = power(allFirstNumber, allSecondNumber);
+        break;
+      default:
+        result = 'This Is Not An Operator';
   }
+  console.log(`The Result is ${result}`);
+  const ask = prompt('Do You Want To Continue? (yes/no)');
+  if (ask === 'no'){
+    break;
+  }
+}
+
+if (typeof result === 'number'){
+  const sign = (result > 0) ? 'positive' : (result < 0) ? 'negative' : 'nol'
+} else {
+  console.log(result);
+}
+
+
+
