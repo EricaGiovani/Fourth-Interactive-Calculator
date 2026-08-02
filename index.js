@@ -102,7 +102,7 @@ while (true){
         result = 'This Is Not An Operator';
   }
 
-
+  const reserveResult = result ?? 'There is no Result';
   console.log(`The Result is ${result}`);
 
   if (typeof result === 'number'){
