@@ -102,7 +102,6 @@ while (true){
         result = 'This Is Not An Operator';
   }
 
-  const reserveResult = result ?? 'There is no Result';
   console.log(`The Result is ${result}`);
 
   if (typeof result === 'number'){
@@ -121,6 +120,7 @@ while (true){
 
   const ask = prompt('Do You Want To Continue? (yes/no)');
   if (ask === 'no'){
+    console.log('Thank You For Using The Calculator!');
     break;
   }
 }
