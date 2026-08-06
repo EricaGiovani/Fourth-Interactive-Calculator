@@ -101,7 +101,7 @@ while (true){
       default:
         result = 'This Is Not An Operator';
   }
-
+  const finalResult = result ?? 'No Result'
   console.log(`The Result is ${result}`);
 
   if (typeof result === 'number'){
@@ -111,7 +111,7 @@ while (true){
 
   console.log("===The Results of The Analysis===");
   console.log(`Positive or Negative or Zero : ${sign}`);
-  console.log(`Integer or Desimal : ${type}`);
+  console.log(`Integer or Decimal : ${type}`);
   console.log(`Even or Odd : ${parity}`);
 
   } else {
