@@ -2,9 +2,10 @@
 'use strict';
 const prompt = require("prompt-sync")();
 
-console.log("===Interactive Calculator===");
-const name = prompt('Masukkan Nama: ');
+console.log("=============== Interactive Calculator ===============");
+const name = prompt('Enter Your Name: ');
 console.log(`Welcome to Interactive Calculator, ${name}!`)
+console.log('=======================================================')
 
 function firstNumber(){
   while(true){
@@ -21,7 +22,7 @@ function firstNumber(){
 
 function getOperator(){
   while(true){
-    const inputOperator = prompt('Enter the Operator: ');
+    const inputOperator = prompt('Enter the Operator (+, -, *, /, %, **): ');
     const operator = ['+', '-', '*', '/', '%', '**'];
 
   if (!operator.includes(inputOperator)){
@@ -102,17 +103,20 @@ while (true){
         result = 'This Is Not An Operator';
   }
   const finalResult = result ?? 'No Result'
-  console.log(`The Result is ${result}`);
+  console.log('=======================================================');
+  console.log(`================== The Result is ${result} ==================`);
+  console.log('=======================================================')
 
   if (typeof result === 'number'){
   const sign = (result > 0) ? 'Positive' : (result < 0) ? 'Negative' : 'Zero';
   const type = Number.isInteger(result) ? 'Integer' : 'Desimal';
   const parity = (type === 'Integer' && result % 2 === 0) ? 'Even' : (type === 'Integer' ? 'Odd' : '');
 
-  console.log("===The Results of The Analysis===");
+  console.log("============= The Results of The Analysis =============");
   console.log(`Positive or Negative or Zero : ${sign}`);
   console.log(`Integer or Decimal : ${type}`);
   console.log(`Even or Odd : ${parity}`);
+  console.log('=======================================================');
 
   } else {
   console.log(result);
@@ -120,7 +124,7 @@ while (true){
 
   const ask = prompt('Do You Want To Continue? (yes/no)');
   if (ask === 'no'){
-    console.log('Thank You For Using The Calculator!');
+    console.log('======== Thank You For Using The Calculator! ========');
     break;
   }
 }
